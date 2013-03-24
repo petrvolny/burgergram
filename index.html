@@ -27,7 +27,7 @@
         <div class="burger-list">
           {{#each controller}}
               <div class="burger">
-                <img {{bindAttr src="lowRes"}}>
+                <img onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}>
               </div>
           {{/each}}
         </div>

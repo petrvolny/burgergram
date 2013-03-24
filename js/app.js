@@ -50,7 +50,7 @@ App.Burger = Ember.Object.extend({
 });
 
 App.Burger.reopenClass({
-    nextPage: 'https://api.instagram.com/v1/tags/bratwurst/media/recent?client_id='+CLIENT_ID,
+    nextPage: 'https://api.instagram.com/v1/tags/hamburger/media/recent?client_id='+CLIENT_ID,
 
     find: function() {
         var nextPage = this.nextPage,
