@@ -1,5 +1,5 @@
 /* html5doctor.com Reset v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) - http://cssreset.com */
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:rgb(249,247,244)}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;}
 body{line-height:1}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 nav ul{list-style:none}
@@ -25,32 +25,72 @@ input,select{vertical-align:middle}
 /* APP */
 
 body {
-  min-width: 700px;
-  max-width: 1000px;
   margin: 0 auto;
-  font-family: "lucida grande", sans-serif;
+  font-family: "Open Sans", sans-serif;
+	background-color: #f2f2f2;
 }
 
 .header {
-  height: 579px;
-  background: url(../images/logo.png) no-repeat center;
-  overflow: hidden;
+  padding:25px;
+  width: 100%;
+	background-color: #ffffff;
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.header img {
+	display: block;
+	margin: 0 auto;
+}
+
+.burgers {
+
 }
 
 .burger-list {
-  display: -webkit-flex;
-  -webkit-flex-flow: row wrap;
-  -webkit-justify-content: center;
+	padding: 20px 0 20px 0;
+	overflow: hidden;
+	max-width:1000px;
+	list-style-type: none;
+	margin: 0 auto;
+}
+
+
+.burger-list .burger {
+	padding: 10px;
+	background:none;
+	float: left;
+}
+
+.burgerimg {
+	display:block;
+	position: relative;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
 }
 
 .burger-list .burger img {
-  opacity: 0;
-  margin: 10px;
-  -webkit-flex-grow: 1;
+	opacity: 0;
   -moz-transition: opacity 2s; /* Firefox 4 */
   -webkit-transition: opacity 2s; /* Safari and Chrome */
   -o-transition: opacity 2s;
   transition: opacity 2s;
+}
+
+.burgerimg::before
+{
+    display:block;
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    -moz-box-shadow:inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow:inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+    box-shadow:inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+		z-index: 1000;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
 }
 
 .loading {
@@ -59,3 +99,28 @@ body {
     height: 50px;
 }
 
+/* Large desktop */
+@media (min-width: 1200px) { 
+	
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.burger-list {
+	max-width: 652px;	
+	}
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.burger-list {
+	max-width: 652px;	
+	}	
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 651px) {	
+	.burger-list {
+	max-width: 346px;	
+	}
+}

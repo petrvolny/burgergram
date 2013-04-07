@@ -16,25 +16,34 @@
     <script type="text/x-handlebars">
         {{#linkTo 'index'}}
         <div class="header">
+		<img src="images/logo.png" title="Burgergram | It's like Instagram for hamburgers">
         </div>
         {{/linkTo}}
         {{outlet}}
         {{render "loadMore"}}
     </script>
 
+
 <!-- Burger Listing -->
+
     <script type="text/x-handlebars" data-template-name="index">
-        <div class="burger-list">
-          {{#each controller}}
-              <div class="burger">
-                <img onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}>
-              </div>
-          {{/each}}
-        </div>
+		<div class="burgers">
+        	<ul class="burger-list">
+          		{{#each controller}}
+              	<li class="burger">
+                	<a class="burgerimg"><img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}></a>
+              	</li>
+          		{{/each}}
+        	</ul>
+		</div>
     </script>
-<!-- Burger Listing -->
+<!-- Load More -->
     <script type="text/x-handlebars" data-template-name="loadMore">
         <center>
             <div class="loading"></div>
         </center>
     </script>
+
+	</div>
+
+</html>
