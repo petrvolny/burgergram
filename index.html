@@ -14,11 +14,21 @@
   </head>
   <body>
     <script type="text/x-handlebars">
-        {{#linkTo 'index'}}
-        <div class="header">
-		<img src="images/logo.png" title="Burgergram | It's like Instagram for hamburgers">
-        </div>
-        {{/linkTo}}
+       
+        <section class="about">
+			<div class="about-content">
+				<h2>Burgergram – It&rsquo;s like Instagram for hamburgers</h2>
+				<p class="mission">
+		Burgergram is a tiny sideproject of Pavel Maček and Petr Volný. We explored possibilities Ember.js with endless stream, CSS animations and bureger love. One bite at a time.</p>
+				<p class="extras">Feel free to use our Ember.js endless stream repo and custom burger animation.</p>
+				<div class="clearfix">	
+			</div>
+		</section>
+		<section class="header">
+		<a class="btn-about" href="">?</a>
+		{{#linkTo 'index'}}<img src="images/logo.png" title="Burgergram | It's like Instagram for hamburgers">{{/linkTo}}
+        </section>
+        
         {{outlet}}
         {{render "loadMore"}}
     </script>
@@ -27,15 +37,15 @@
 <!-- Burger Listing -->
 
     <script type="text/x-handlebars" data-template-name="index">
-		<div class="burgers">
+		<section class="burgers">
         	<ul class="burger-list">
           		{{#each controller}}
               	<li class="burger">
-                	<a class="burgerimg"><img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}></a>
+                	<a href="" class="burgerimg"><img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}><div class="desc"><p><strong>pavel_macek</strong> I just had a one fine burger Peti.</p></div></a>
               	</li>
           		{{/each}}
         	</ul>
-		</div>
+		</section>
     </script>
 <!-- Load More -->
     <script type="text/x-handlebars" data-template-name="loadMore">
