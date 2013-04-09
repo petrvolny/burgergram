@@ -6,6 +6,16 @@ var CLIENT_ID = '899426d0f7f445ff9f744fff5260e134';
 window.App = Ember.Application.create();
 
 App.IndexController = Ember.ArrayController.extend({
+    showAbout: false,
+
+    aboutLabel: function() {
+        return this.get('showAbout') ? '#' : '?';
+    }.property('showAbout'),
+
+    toggleAbout: function() {
+        this.toggleProperty('showAbout');
+    },
+
     loadMore: function() {
         var moreBurgers = App.Burger.find(),
             that = this;
