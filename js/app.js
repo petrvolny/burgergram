@@ -70,7 +70,12 @@ App.Burger.reopenClass({
 
                 instaBurgers.forEach(function(burger, index) {
                     if (index >= maxIndex) return;
-                    result.pushObject({ lowRes: burger.images.low_resolution.url });
+                    result.pushObject({
+                        lowRes: burger.images.low_resolution.url,
+                        desc: burger.caption && burger.caption.text,
+                        user: burger.user.username,
+                        instagramLink: burger.link
+                    });
                 });
                 that.nextPage = data.pagination.next_url;
                 result.set('isLoaded', true);
