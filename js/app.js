@@ -1,7 +1,7 @@
 (function() {
 "use strict";
 
-var CLIENT_ID = ''; /*899426d0f7f445ff9f744fff5260e134*/
+var CLIENT_ID = '899426d0f7f445ff9f744fff5260e134';
 
 window.App = Ember.Application.create();
 
