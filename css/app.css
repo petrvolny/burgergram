@@ -61,8 +61,21 @@ body {
 	border-radius: 100px;
 }
 
+
+
 .about {
 	background-color:#222;
+	margin-top: -180px;
+	-webkit-transition: margin 0.5s ease-in-out;
+	-moz-transition: margin 0.5s ease-in-out;
+	-o-transition: margin 0.5s ease-in-out;
+	-ms-transition: margin 0.5s ease-in-out;
+	transition: margin 0.5s ease-in-out;
+}
+
+.aboutVisible {
+	display: block;
+	margin-top:0;
 }
 
 .about-content {
@@ -215,7 +228,6 @@ body {
 	opacity:0;
 	-webkit-animation-delay: 1.2s;
 	-moz-animation-delay: 1.2s;
-
 }
 
 .tomato {
