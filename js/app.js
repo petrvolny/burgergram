@@ -8,6 +8,10 @@ window.App = Ember.Application.create();
 App.IndexController = Ember.ArrayController.extend({
     showAbout: false,
 
+    aboutClass: function() {
+        return 'about' + (this.get('showAbout') ? ' aboutVisible' : '');
+    }.property('showAbout'),
+
     aboutLabel: function() {
         return this.get('showAbout') ? '#' : '?';
     }.property('showAbout'),

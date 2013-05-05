@@ -25,17 +25,15 @@
 <!-- Burger Listing -->
 
     <script type="text/x-handlebars" data-template-name="index">
-        {{#if showAbout}}
-            <section class="about">
-                <div class="about-content">
-                    <h2>Burgergram – It&rsquo;s like Instagram for hamburgers</h2>
-                    <p class="mission">
-            Burgergram is a tiny sideproject of Pavel Maček and Petr Volný. We explored possibilities Ember.js with endless stream, CSS animations and bureger love. One bite at a time.</p>
-                    <p class="extras">Feel free to use our Ember.js endless stream repo and custom burger animation.</p>
-                    <div class="clearfix">
-                </div>
-            </section>
-        {{/if}}
+        <section {{bindAttr class="aboutClass"}}>
+            <div class="about-content">
+                <h2>Burgergram – It&rsquo;s like Instagram for hamburgers</h2>
+                <p class="mission">
+        Burgergram is a tiny sideproject of Pavel Maček and Petr Volný. We explored possibilities Ember.js with endless stream, CSS animations and bureger love. One bite at a time.</p>
+                <p class="extras">Feel free to use our Ember.js endless stream repo and custom burger animation.</p>
+                <div class="clearfix">
+            </div>
+        </section>
 
 		<section class="header">
 		<a class="btn-about" href="" {{action toggleAbout}}>{{aboutLabel}}</a>
