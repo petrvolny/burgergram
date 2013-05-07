@@ -13,7 +13,7 @@ App.IndexController = Ember.ArrayController.extend({
     }.property('showAbout'),
 
     aboutLabel: function() {
-        return this.get('showAbout') ? 'X' : '?';
+        return this.get('showAbout') ? 'x' : '?';
     }.property('showAbout'),
 
     toggleAbout: function() {
