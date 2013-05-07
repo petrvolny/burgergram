@@ -32,29 +32,30 @@
 					</p>
 				</div>
                 <div class="extras">
-					<p>Feel free to use our <a href="https://github.com/petrvolny/burgergram/">Ember.js endless stream repo</a> and custom burger animation. All this is made possible by <a href="">Instagram</a>.	<a>Share buttons</a></div>
-					</p>
-                <div class="clearfix">
+					<p>Feel free to use our <a href="https://github.com/petrvolny/burgergram/">Ember.js endless stream repo</a> and custom burger animation. All this is made possible by <a href="">Instagram</a>.	<a>Share buttons</a></p>
+				</div>	
+                <div class="clearfix"></div>
             </div>
         </section>
+		
+		<div class="wrapper">
+			<section class="header">
+			<a class="btn-about" href="#" {{action toggleAbout}}>{{aboutLabel}}</a>
+			<img src="images/logo.png" title="Burgergram | It's like Instagram for hamburgers">
+	        </section>
 
-		<section class="header">
-		<a class="btn-about" href="#" {{action toggleAbout}}>{{aboutLabel}}</a>
-		<img src="images/logo.png" title="Burgergram | It's like Instagram for hamburgers">
-        </section>
-
-		<section class="burgers">
-        	<ul class="burger-list">
-          		{{#each controller}}
-              	<li class="burger">
-                	<a {{bindAttr href="instagramLink"}} class="burgerimg">
-                        <img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}>
-                        <div class="desc"><p><strong>{{user}} </strong>{{desc}}</p></div>
-                    </a>
-              	</li>
-          		{{/each}}
-        	</ul>
-		</section>
+			<section class="burgers">
+	        	<ul class="burger-list">
+	          		{{#each controller}}
+	              	<li class="burger">
+	                	<a {{bindAttr href="instagramLink"}} class="burgerimg">
+	                        <img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}>
+	                        <div class="desc"><p><strong>{{user}} </strong>{{desc}}</p></div>
+	                    </a>
+	              	</li>
+	          		{{/each}}
+	        	</ul>
+			</section>
     </script>
 <!-- Load More -->
     <script type="text/x-handlebars" data-template-name="loadMore">
