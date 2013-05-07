@@ -24,13 +24,13 @@ body {
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
 	font-size: 13px;
-  line-height:1.5;
+  line-height:1.6;
 	background-color: #f2f2f2;
 	-webkit-backface-visibility: hidden;
 }
 
-
 /* Header */
+
 .header {
   padding:25px;
 	background-color: #ffffff;
@@ -43,7 +43,13 @@ body {
 	margin: 0 auto;
 }
 
+h2 {
+	font-size: 20px;
+	line-height: 1.8;
+}
+
 /* About */
+
 .btn-about {
 	display:block;
 	right:20px;
@@ -61,21 +67,29 @@ body {
 	border-radius: 100px;
 }
 
-
-
 .about {
+	display: none;
 	background-color:#222;
-	margin-top: -180px;
-	-webkit-transition: margin 0.5s ease-in-out;
-	-moz-transition: margin 0.5s ease-in-out;
-	-o-transition: margin 0.5s ease-in-out;
-	-ms-transition: margin 0.5s ease-in-out;
-	transition: margin 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.about a{
+	color: #f7f7f7;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.about a:hover{
+	color: #ffffff;
+	text-decoration: underline;
 }
 
 .aboutVisible {
 	display: block;
-	margin-top:0;
 }
 
 .about-content {
@@ -83,6 +97,7 @@ body {
 	padding: 40px;
 	margin:0 auto;
 	color:#fff;
+
 }
 
 .mission {
@@ -104,8 +119,8 @@ body {
 }
 
 /* Photo grid */
-.burgers {
 
+.burgers {
 }
 
 .burger-list {
@@ -177,14 +192,13 @@ body {
     -moz-box-shadow:inset 0px 0px 1px 1px rgba(0,0,0,0.1);
     -webkit-box-shadow:inset 0px 0px 1px 1px rgba(0,0,0,0.1);
     box-shadow:inset 0px 0px 1px 1px rgba(0,0,0,0.1);
-		z-index: 1000;
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
+		z-index: 999;
 }
 
-
-
+/* Responsive behaviour */
 
 @media (min-width: 1200px) { 
 }
@@ -208,7 +222,7 @@ body {
 	}
 }
 
-/* Loading */
+/* Loading animation*/
 
 .loading {
 	display: block;
@@ -218,62 +232,49 @@ body {
 	margin:30px;
 }
 
-.topbun {
+.topbun, .tomato, .lettuce-cheese, .meat, .bottombun {
 	display: block;
-	width: 100px;
-	height: 35px;
+	width: 100px;	
 	position: absolute;
+	opacity:0;
+}
+
+.topbun {
+	height: 35px;
 	bottom: 42px;
 	background: url("../images/loading-topbun.png") center no-repeat;
-	opacity:0;
 	-webkit-animation-delay: 1.2s;
 	-moz-animation-delay: 1.2s;
 }
 
 .tomato {
-	display: block;
-	width: 100px;
 	height: 6px;
-	position: absolute;
 	bottom: 36px;
 	background: url("../images/loading-tomato.png") center no-repeat;
-	opacity:0;
 	-webkit-animation-delay: 0.9s;
 	-moz-animation-delay: 0.9s;
 }
 
 .lettuce-cheese {
-	display: block;
-	width: 100px;
 	height: 10px;
-	position: absolute;
 	bottom: 26px;
 	background: url("../images/loading-lettuce_cheese.png") center no-repeat;
-	opacity:0;
 	-webkit-animation-delay: 0.6s;
 	-moz-animation-delay: 0.6s;
 }
 
 .meat {
-	display: block;
-	width: 100px;
 	height: 11px;
-	position: absolute;
 	bottom: 15px;
 	background: url("../images/loading-meat.png") center no-repeat;
-	opacity:0;
 	-moz-animation-delay: 0.3s;
 	-webkit-animation-delay: 0.3s;
 }
 
 .bottombun {
-	display: block;
-	width: 100px;
 	height: 15px;
-	position: absolute;
 	bottom: 0px;
 	background: url("../images/loading-bottombun.png") center no-repeat;
-	opacity:0;
 }
 
 .animated, .anim{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:0.5s;-moz-animation-duration:0.5s;-ms-animation-duration:0.5s;-o-animation-duration:0.5s;animation-duration:0.5s;}.animated.hinge{-webkit-animation-duration:2s;-moz-animation-duration:2s;-ms-animation-duration:2s;-o-animation-duration:2s;animation-duration:2s;}
