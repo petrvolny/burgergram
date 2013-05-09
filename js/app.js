@@ -8,17 +8,9 @@ window.App = Ember.Application.create();
 App.IndexController = Ember.ArrayController.extend({
     showAbout: false,
 
-    aboutClass: function() {
-        return 'about' + (this.get('showAbout') ? ' aboutVisible' : '');
-    }.property('showAbout'),
-
-    aboutLabel: function() {
-        return 'btn-about' + (this.get('showAbout') ? ' btn-aboutVisible' : '');
-    }.property('showAbout'),
-
     toggleAbout: function() {
         this.toggleProperty('showAbout');
-				$('.about').slideToggle();
+        $('.about').slideToggle();
     },
 
     loadMore: function() {
