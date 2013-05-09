@@ -5,6 +5,12 @@ var CLIENT_ID = '899426d0f7f445ff9f744fff5260e134';
 
 window.App = Ember.Application.create();
 
+App.IndexRoute = Em.Route.extend({
+    model: function() {
+        return [];
+    }
+});
+
 App.IndexController = Ember.ArrayController.extend({
     showAbout: false,
 
@@ -27,6 +33,14 @@ App.IndexController = Ember.ArrayController.extend({
     }
 });
 
+App.LoadMoreController = Ember.ObjectController.extend({
+    needs: ['index'],
+
+    loadMore: function() {
+        this.get('controllers.index').loadMore();
+    }
+});
+
 App.LoadMoreView = Ember.View.extend({
     templateName: 'loadMore',
 
@@ -35,20 +49,6 @@ App.LoadMoreView = Ember.View.extend({
         this.$().bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
             if (isInView) Ember.tryInvoke(view.get('controller'), 'loadMore');
         });
-    }
-});
-
-App.LoadMoreController = Ember.ObjectController.extend({
-    needs: ['index'],
-
-    loadMore: function() {
-        this.get('controllers.index').loadMore();
-    }
-})
-
-App.IndexRoute = Em.Route.extend({
-    model: function() {
-        return [];
     }
 });
 
