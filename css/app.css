@@ -29,10 +29,15 @@ body {
 	-webkit-backface-visibility: hidden;
 }
 
+h2 {
+	font-size: 20px;
+	line-height: 1.8;
+}
+
 /* Header */
 
 .header {
-  padding:25px;
+  padding:40px;
 	background-color: #ffffff;
 	border-bottom: 1px solid #e9e9e9;
 }
@@ -42,9 +47,19 @@ body {
 	margin: 0 auto;
 }
 
-h2 {
-	font-size: 20px;
-	line-height: 1.8;
+
+.logo{
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.logo:hover {
+	transform:rotate(3deg);
+	-ms-transform:rotate(3deg);
+	-webkit-transform:rotate(3deg);
 }
 
 /* About */
@@ -71,7 +86,13 @@ h2 {
 	transition: all 0.3s ease-in-out;
 }
 
-.btn-aboutVisible {
+.btn-about:hover {
+	transform:rotate(15deg);
+	-ms-transform:rotate(15deg);
+	-webkit-transform:rotate(15deg);
+}
+
+.btn-aboutVisible, .btn-aboutVisible:hover {
 	background-color: #fff;
 	color: #000;
 	transform:rotate(45deg);
