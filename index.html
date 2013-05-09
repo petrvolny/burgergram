@@ -24,6 +24,7 @@
 <!-- Burger Listing -->
 
     <script type="text/x-handlebars" data-template-name="index">
+	<a {{bindAttr class="aboutLabel"}} href="#" {{action toggleAbout}}>+</a>
         <section {{bindAttr class="aboutClass"}}>
             <div class="about-content">
                 <h2>Burgergram – It&rsquo;s like Instagram for hamburgers</h2>
@@ -39,8 +40,9 @@
         </section>
 		
 		<div class="wrapper">
+		
 			<section class="header">
-			<a class="btn-about" href="#" {{action toggleAbout}}>{{aboutLabel}}</a>
+			
 			<img src="images/logo.png" title="Burgergram | It's like Instagram for hamburgers">
 	        </section>
 
