@@ -84,6 +84,7 @@ h2 {
 	-o-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
+	z-index:1000;
 }
 
 .btn-about:hover {
