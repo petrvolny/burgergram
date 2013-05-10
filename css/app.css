@@ -17,6 +17,8 @@ input,select{vertical-align:middle}
   box-sizing: border-box;
 }
 
+html {overflow-y: scroll;}
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
