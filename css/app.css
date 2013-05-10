@@ -47,7 +47,6 @@ h2 {
 	margin: 0 auto;
 }
 
-
 .logo{
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -141,7 +140,10 @@ h2 {
 	display:block;
 	width:49%;
 	float: right;
+}
 
+.share {
+	padding-top:24px;
 }
 
 .clearfix {
