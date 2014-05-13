@@ -40,10 +40,7 @@
         {{#if model.isLoaded}}
           {{#each model}}
             <li class="burger">
-            <a {{bindAttr href="instagramLink"}} class="burgerimg">
-              <img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}>
-              <div class="desc"><p><strong>{{user}} </strong>{{desc}}</p></div>
-            </a>
+              <img class="burgerimg" {{bindAttr src="lowRes"}} onload="this.style.opacity='1';">
             </li>
           {{/each}}
         {{else}}

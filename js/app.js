@@ -31,9 +31,6 @@ App.Burger.reopenClass({
                 instaBurgers.forEach(function(burger, index) {
                     result.pushObject({
                         lowRes: burger.images.low_resolution.url,
-                        desc: burger.caption && burger.caption.text,
-                        user: burger.user.username,
-                        instagramLink: burger.link
                     });
                 });
                 result.set('isLoaded', true);
