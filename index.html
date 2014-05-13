@@ -11,95 +11,46 @@
     <meta property="og:title" content="Burgergram"/>
     <meta property="og:url" content="http://burgergram.com/"/>
 	<link rel="shortcut icon" href="images/favicon.png">
-    <script text="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script text="text/javascript" src="js/libs/handlebars-1.0.0-rc.3.js"></script>
-    <script text="text/javascript" src="js/libs/ember-1.0.0-rc.3.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.3.0.js"></script>
+    <script src="http://builds.emberjs.com/tags/v1.5.0/ember.js"></script>
     <script text="text/javascript" src="js/libs/jquery.inview.min.js"></script>
     <script text="text/javascript" src="js/app.js"></script>
 	<script text="text/javascript" src="js/loading.js"></script>
   </head>
   <body>
-    <script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    <div id="fb-root"></div>
-    <script type="text/javascript">(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- Ember handlebars templates -->
-    <script type="text/x-handlebars">
-        {{outlet}}
-        {{render "loadMore"}}
-    </script>
+  <script type="text/x-handlebars">
+    {{outlet}}
+    {{!render "loadMore"}}
+  </script>
 
 
-<!-- Burger Listing -->
-
+<!-- Index template -->
     <script type="text/x-handlebars" data-template-name="index">
-	<a {{bindAttr class=":btn-about showAbout:btn-aboutVisible"}} href="#" {{action toggleAbout}}>+</a>
-        <section {{bindAttr class=":about showAbout:aboutVisible"}}>
-            <div class="about-content">
-                <h2>Burgergram – It&rsquo;s like Instagram for hamburgers</h2>
-                <div class="mission">
-       				<p>Burgergram is a tiny sideproject of Pavel Maček (<a href="http://www.twitter.com/pavel_macek">@pavel_macek</a>) and Petr Volný (<a href="http://www.twitter.com/petrvolny">@petrvolny</a>). We created Burgegram to explore possibilities of Ember.js with endless stream, CSS animations and burger love. One bite at a time.
-					</p>
-				</div>
-                <div class="extras">
-					<p>Feel free to use our <a href="https://github.com/petrvolny/burgergram/">Ember.js endless stream repo</a> and loading burger animation. All this is made possible by <a href="">Instagram</a>.</p>
-                <div class="share">
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en">Tweet</a>
-                    <div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true">
-					</div>
-				</div>
-				</div>
-                <div class="clearfix"></div>
-            </div>
-        </section>
+    <div class="wrapper">
 
-		<div class="wrapper">
+    <section class="header">
+      <img class="logo anim fadeInDown" src="images/logo.png" height="214" width="224">
+    </section>
 
-			<section class="header">
-			<img class="logo anim fadeInDown" src="images/logo.png" height="214" width="224">
-	        </section>
-
-			<section class="burgers">
-	        	<ul class="burger-list">
-	          		{{#each controller}}
-	              	<li class="burger">
-	                	<a {{bindAttr href="instagramLink"}} class="burgerimg">
-	                        <img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}>
-	                        <div class="desc"><p><strong>{{user}} </strong>{{desc}}</p></div>
-	                    </a>
-	              	</li>
-	          		{{/each}}
-	        	</ul>
-			</section>
+	<section class="burgers">
+      <ul class="burger-list">
+        {{#if model.isLoaded}}
+          {{#each model}}
+            <li class="burger">
+            <a {{bindAttr href="instagramLink"}} class="burgerimg">
+              <img class="burgerimg" onload="this.style.opacity='1';" {{bindAttr src="lowRes"}}>
+              <div class="desc"><p><strong>{{user}} </strong>{{desc}}</p></div>
+            </a>
+            </li>
+          {{/each}}
+        {{else}}
+            Loading ...
+        {{/if}}
+      </ul>
+    </section>
     </script>
-<!-- Load More -->
-    <script type="text/x-handlebars" data-template-name="loadMore">
-        <center>
-			<div class="loading anim">
-				<div class="topbun animated"></div>
-				<div class="tomato animated "></div>
-				<div class="lettuce-cheese animated"></div>
-				<div class="meat animated"></div>
-				<div class="bottombun animated"></div>
-			</div>
-        </center>
-    </script>
-	</div>
-	<script type="text/javascript">
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-40802240-1', 'burgergram.com');
-	  ga('send', 'pageview');
-
-	</script>
 </body>
 </html>
